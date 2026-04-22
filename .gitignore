@@ -1,0 +1,30 @@
+# Ignore all hidden files and folders
+.*
+
+# Except this file
+!.gitignore
+!.pre-commit-config.yaml
+!.flake8
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore install metadata
+*.egg-info/
+build/
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS and editor files
+.DS_Store
+*.swp
+
+# Used for processing
+notebooks/dicts_dfs/
