@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "experiments_2024"
+version = "0.1.0"
+description = "Analysis and tools for 2022 experiments"
+authors = [
+    { name = "Joshua Neutel" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib>=3.4.2",
+    "numpy>=1.17",
+    "pandas>=2.1.0",
+    "plotly",
+    "scikit-learn>=1.4.2",
+    "psychrolib",
+    "statsmodels",
+    "pre-commit>=3.0",
+    "black",
+    "flake8",
+    "jupyterlab",
+    "ipykernel",
+    "kaleido",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.flake8]
+max-line-length = 88
+select = ["C", "E", "F", "W", "B", "B950"]
+extend-ignore = ["E203", "E231", "E501", "E741", "W503"]
+
+[tool.numpydoc_validation]
+checks = [
+    "all",   # report on all checks, except the below
+    "GL08", # The object does not have a docstring
+    "SA01", # See Also section not found
+    "ES01", # No extended summary found
+    "EX01", # No examples section found
+    "SS03", # Summary does not end with a period
+    "SS05", # Summary must start with infinitive verb, not third person
+    "PR04", # Parameter has no type
+    "PR08", # Parameter description should start with a capital letter
+    "PR09", # Parameter description should finish with "."
+    "PR07", # Parameter has no description
+    "RT01", # No Returns section found
+    "RT03", # Return value has no description
+    "RT04", # Return value description should start with a capital letter
+    "RT05", # Return description should finish with "."
+]
+exclude = [  # don't report on objects that match any of these regex
+    '\.undocumented_method$',
+    '\.__repr__$',
+]
