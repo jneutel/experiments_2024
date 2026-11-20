@@ -814,7 +814,7 @@ def make_dot_plot(
                     label = None
 
                 if normalize_x:
-                    x = zone_i / len(ser.index)
+                    x = 100 * (zone_i / len(ser.index))
                 else:
                     x = zone_i
 
